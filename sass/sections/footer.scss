@@ -1,0 +1,79 @@
+@use "../abstract" as *;
+
+.footer {
+	width: inherit;
+	// height: 42rem;
+	position: relative;
+	padding-top: 6.4rem;
+
+	&__02 {
+		width: 5.6rem;
+		height: 5.6rem;
+
+		color: $color-secondary;
+		background-color: $color-white;
+		border: 0.1rem solid $color-purple-light;
+		border-radius: 50%;
+
+		@include font-settings(1.6rem, 900, 150%);
+		@include flex-settings;
+
+		position: relative;
+		top: calc(5.6rem / 2);
+		left: 50%;
+		translate: -50%;
+		z-index: 10;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 5.5rem;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0.1rem;
+			height: 8rem;
+			background-color: $color-purple-light;
+		}
+	}
+
+	&__content {
+		width: 100%;
+		height: 31.2rem;
+		color: $color-white;
+		padding: 11.2rem 8rem;
+
+		background: linear-gradient(
+				rgba($color-cyan, 0.8),
+				rgba($color-cyan, 0.8)
+			),
+			url("../../assets/desktop/image-footer.jpg") no-repeat;
+		background-size: cover;
+
+		@include flex-settings(space-between);
+
+		&-title {
+			@include font-settings(4rem, 900, 110%);
+		}
+
+		&-description {
+			width: 35.5rem;
+			@include font-settings(1.8rem, 500, 150%);
+		}
+
+		&-download {
+			&:link,
+			&:visited {
+				background-color: $color-purple;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $color-hover-purple;
+			}
+
+			&-v13 {
+				color: $color-purple-light;
+			}
+		}
+	}
+}

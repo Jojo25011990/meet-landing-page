@@ -1,0 +1,29 @@
+@use "./variables";
+
+// *** Font Settings ***
+@mixin font-settings($size, $weight, $line-height, $l-spacing: null) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+
+	@if $l-spacing {
+		letter-spacing: $l-spacing;
+	}
+}
+
+// *** Flexbox Settings ****
+@mixin flex-settings(
+	$justify: center,
+	$align: center,
+	$direction: null,
+	$gap: null
+) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+
+	@if $gap {
+		gap: $gap;
+	}
+}
