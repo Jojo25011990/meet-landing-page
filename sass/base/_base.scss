@@ -11,6 +11,12 @@ body {
 	@include dimension-settings(100%, null, null, 144rem);
 }
 
+.header,
+.main,
+.footer {
+	background-color: $color-bg;
+}
+
 .btn {
 	&:link,
 	&:visited {

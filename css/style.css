@@ -104,6 +104,12 @@ body {
   max-width: 144rem;
 }
 
+.header,
+.main,
+.footer {
+  background-color: #fafafa;
+}
+
 .btn:link, .btn:visited {
   color: #fff;
   padding: 1.6rem 4rem;
