@@ -28,9 +28,9 @@
 		color: $color-white;
 
 		@include footer-background-images(
-			"../../assets/desktop/image-footer.jpg",
-			"../../assets/tablet/image-footer.jpg",
-			"../../assets/mobile/image-footer.jpg"
+			".././assets/desktop/image-footer.jpg",
+			".././assets/tablet/image-footer.jpg",
+			".././assets/mobile/image-footer.jpg"
 		);
 
 		@include dimension-settings(100%, 31.2rem);
