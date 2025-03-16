@@ -1,0 +1,245 @@
+@use "../abstract" as *;
+
+.main {
+	color: $color-primary;
+
+	overflow-x: hidden;
+
+	@include dimension-settings(inherit);
+}
+
+// *** Group Chat ***
+.group__chat {
+	padding: 6.4rem 0;
+
+	@include dimension-settings(inherit);
+	@include flex-settings(space-between, center, row);
+
+	@include respon-design(desktop-medium) {
+		@include flex-settings(center, center, row);
+		flex-wrap: wrap;
+	}
+
+	@include respon-design(mobile-large) {
+		padding: 6.4rem 3.2rem 3.2rem;
+	}
+
+	&-imgLeft {
+		margin-left: -2.4rem;
+
+		@include respon-design(desktop-medium) {
+			margin-left: 0;
+		}
+
+		@include respon-design(mobile-large) {
+			@include dimension-settings(null, null, 16rem, 42rem);
+		}
+	}
+
+	&-imgRight {
+		margin-right: -2.4rem;
+
+		@include respon-design(desktop-medium) {
+			margin-right: 0;
+		}
+
+		@include respon-design(tablet-medium) {
+			display: none;
+		}
+	}
+
+	&-content {
+		text-align: center;
+
+		@include dimension-settings(45rem, 31.4rem);
+		@include flex-settings(space-between, $direction: column);
+
+		@include respon-design(desktop-medium) {
+			order: 1;
+
+			margin-top: 7.2rem;
+		}
+	}
+
+	&-title {
+		@include font-settings(6.4rem, 900, 110%);
+
+		@include respon-design(tablet-medium) {
+			@include font-settings(4.8rem, 900, 110%);
+		}
+
+		@include respon-design(mobile-large) {
+			@include font-settings(4rem, 900, 110%);
+		}
+	}
+
+	&-description {
+		@include font-settings(1.8rem, 500, 150%);
+
+		@include respon-design(tablet-medium) {
+			@include font-settings(1.6rem, 500, 150%);
+		}
+
+		@include respon-design(mobile-large) {
+			@include font-settings(1.6rem, 500, 150%);
+		}
+	}
+
+	&-btnBox {
+		@include flex-settings(null, null, $gap: 1.7rem);
+
+		@include respon-design(mobile-large) {
+			@include flex-settings(null, null, column);
+		}
+	}
+
+	.group__chat-download {
+		&:link,
+		&:visited {
+			background-color: $color-cyan;
+		}
+
+		&:hover,
+		&:active {
+			background-color: $color-hover-cyan;
+		}
+
+		&-v13 {
+			color: $color-cyan-light;
+		}
+	}
+
+	.group__chat-what-is {
+		&:link,
+		&:visited {
+			background-color: $color-purple;
+		}
+
+		&:hover,
+		&:active {
+			background-color: $color-purple-light;
+		}
+	}
+}
+// *** End of Group Chat ***
+
+// *** Smarter Meetings ***
+.smarter__meetings {
+	padding: 5.6rem 8rem;
+
+	@include dimension-settings(inherit);
+	@include flex-settings;
+
+	@include respon-design(tablet-small) {
+		padding: 5.6rem 3rem;
+	}
+
+	@include respon-design(mobile-large) {
+		@include respon-design(tablet-small) {
+			padding: 10rem 3rem 5.6rem 3rem;
+		}
+	}
+
+	&-container {
+		@include dimension-settings(100%, null, 75.5rem, 112rem);
+		@include flex-settings(flex-end, center, column);
+	}
+
+	&-01 {
+		position: relative;
+
+		color: $color-secondary;
+
+		border: 0.1rem solid $color-purple-light;
+		border-radius: 50%;
+
+		margin-bottom: 6.4rem;
+
+		@include dimension-settings(5.6rem, 5.6rem);
+		@include font-settings(1.6rem, 900, 150%);
+		@include flex-settings;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 5.5rem;
+			left: 50%;
+			transform: translateX(-50%);
+
+			background-color: $color-purple-light;
+
+			@include dimension-settings(0.1rem, 8rem);
+		}
+	}
+
+	&-images {
+		margin-bottom: 6.4rem;
+
+		@include dimension-settings(100%, null, 25.6rem, 112rem);
+
+		@include flex-settings(space-between, $gap: 1.4rem);
+
+		@include respon-design(tablet-large) {
+			flex-wrap: wrap;
+
+			@include dimension-settings(100%, null, 25.6rem, 53rem);
+		}
+
+		@include respon-design(mobile-ex-large) {
+			width: 35rem;
+		}
+
+		&-img {
+			border-radius: 0.8rem;
+
+			@include dimension-settings(100%, auto, 16rem, 25.6rem);
+
+			@include respon-design(mobile-ex-large) {
+				@include dimension-settings(100%, auto, 16rem, 16.6rem);
+			}
+		}
+	}
+
+	&-content {
+		text-align: center;
+
+		@include dimension-settings(100%, null, 23.5rem, 54.4rem);
+		@include flex-settings($direction: column);
+	}
+
+	&-text {
+		color: $color-cyan;
+
+		margin-bottom: 1.6rem;
+
+		text-transform: uppercase;
+		@include font-settings(1.6rem, 900, 110%, 0.4rem);
+
+		@include respon-design(mobile-ex-large) {
+			@include font-settings(1.2rem, 900, 110%, 0.4rem);
+		}
+	}
+
+	&-title {
+		color: $color-primary;
+
+		margin-bottom: 3.2rem;
+
+		@include dimension-settings(100%, $max-width: 44.5rem);
+		@include font-settings(4rem, 900, 110%);
+
+		@include respon-design(mobile-ex-large) {
+			@include font-settings(3.2rem, 900, 110%);
+		}
+	}
+
+	&-description {
+		color: $color-secondary;
+		@include font-settings(1.8rem, 500, 150%);
+
+		@include respon-design(mobile-ex-large) {
+			@include font-settings(1.6rem, 500, 150%);
+		}
+	}
+}
+// *** End of Smarter Meetings ***

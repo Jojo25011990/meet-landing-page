@@ -1,0 +1,8 @@
+@use "../abstract" as *;
+
+.header {
+	padding-top: 8rem;
+
+	@include dimension-settings(inherit, 10.8rem);
+	@include flex-settings(center, null);
+}

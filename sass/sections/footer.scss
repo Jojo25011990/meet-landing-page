@@ -1,0 +1,93 @@
+@use "../abstract" as *;
+@use "./main.scss";
+
+.footer {
+	position: relative;
+
+	padding-top: 6.4rem;
+
+	@include dimension-settings(inherit);
+
+	&__02 {
+		position: relative;
+		top: calc(5.6rem / 2);
+		left: 50%;
+		translate: -50%;
+		z-index: 10;
+
+		margin-bottom: 0;
+
+		background-color: $color-white;
+
+		@extend .smarter__meetings-01;
+	}
+
+	&__content {
+		padding: 11.2rem 8rem;
+
+		color: $color-white;
+
+		@include footer-background-images(
+			"../../assets/desktop/image-footer.jpg",
+			"../../assets/tablet/image-footer.jpg",
+			"../../assets/mobile/image-footer.jpg"
+		);
+
+		@include dimension-settings(100%, 31.2rem);
+		@include flex-settings(space-between);
+
+		@include respon-design(desktop-medium) {
+			padding: 6rem 8rem;
+
+			text-align: center;
+
+			@include flex-settings(center, center, column, 2.4rem);
+		}
+
+		@include respon-design(desktop-medium) {
+			padding: 3.2rem 3.2rem;
+		}
+
+		&-title {
+			@include dimension-settings(100%, $max-width: 45.6rem);
+			@include font-settings(4rem, 900, 110%);
+
+			@include respon-design(desktop-medium) {
+				@include dimension-settings(100%, $max-width: 50rem);
+
+				@include font-settings(3.6rem, 900, 110%);
+			}
+
+			@include respon-design(mobile) {
+				@include font-settings(3.2rem, 900, 110%);
+			}
+		}
+
+		&-description {
+			@include dimension-settings($max-width: 35.5rem);
+			@include font-settings(1.8rem, 500, 150%);
+
+			@include respon-design(desktop-medium) {
+				@include dimension-settings($max-width: 50rem);
+
+				@include font-settings(1.6rem, 500, 150%);
+			}
+		}
+
+		&-download {
+			&:link,
+			&:visited {
+				background-color: $color-purple;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $color-hover-purple;
+			}
+
+			&-v13 {
+				color: $color-purple-light;
+			}
+		}
+	}
+}
